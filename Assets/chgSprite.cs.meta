@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: dc64d87db5a2d454d97d2fa2b90bb387
+timeCreated: 1527008483
+licenseType: Free
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - spriteMae: {fileID: 21300000, guid: a0f547b5ff18af248b4306ee68354fee, type: 3}
+  - spriteAto: {fileID: 21300000, guid: 59764d690b179094c94b971ef170a419, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
