@@ -9,5 +9,9 @@ public class MenuWindow : MonoBehaviour {
         // ラベルを表示する
         GUI.Label(new Rect(10, 10, 100, 100), "ツキノワグマ");
 	}
-
+    private void Start()
+    {
+        //スタートアップ時、表示を消す
+        this.gameObject.SetActive(false);
+    }
 }

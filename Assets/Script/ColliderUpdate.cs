@@ -12,19 +12,27 @@ public class ColliderUpdate : MonoBehaviour
     {
         var kakashi = GetComponent<Kakashi>();
         radius = kakashi.GetFearRadius(kakashi.fearlevel);
+        GameObject emptyGameObject = new GameObject("SphereCollider2");
+        //emptyGameObjectをKakashi子供として設定する
+        emptyGameObject.transform.SetParent(transform, false);
+        //クマが近寄れない範囲のSphereColliderをつける
+        emptyGameObject.AddComponent<SphereCollider>();
+
+
         var childTransform = this.gameObject.GetComponentsInChildren<Transform>();
 
         foreach (Transform child in childTransform)
         {
             if (null != child.GetComponent<SphereCollider>())
             {
-                if (child.name == "SphereCollider1")
+                if (child.tag == "Kakashi")
                 {
-                    child.GetComponent<SphereCollider>().radius = radius - 0.4f;
+                    child.GetComponent<SphereCollider>().radius = radius;
+
                 }
                 else if (child.name == "SphereCollider2")
                 {
-                    child.GetComponent<SphereCollider>().radius = radius;
+                    child.GetComponent<SphereCollider>().radius = radius - 2.0f;
                 }
             }
         }

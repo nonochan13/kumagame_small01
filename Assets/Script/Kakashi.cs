@@ -8,10 +8,14 @@ public class Kakashi : MonoBehaviour {
     public Sprite sprite;
     public Image image;
     public int fearlevel;
-    
+    public GameObject TuiokuUI;
+    void Awake()
+    {
+        TuiokuUI = GameObject.Find("TuiokuUI");
+    }
 
-    // Use this for initialization
-    void Start() {
+        // Use this for initialization
+        void Start() {
 
     }
 
@@ -26,13 +30,14 @@ public class Kakashi : MonoBehaviour {
     {
         Destroy(this.gameObject);
     }
-    void OnTriggerEnter(Collider other)
+    void OnTriggerStay(Collider other)
     {
         //プレイヤーtag のオブジェクトが接触したら
         if (other.gameObject.tag == "Player")
         {
             Debug.Log("Kakashi");
             image.sprite = sprite;
+            TuiokuUI.SetActive(true);
         }
     }
     private void OnTriggerExit(Collider other)
@@ -40,25 +45,27 @@ public class Kakashi : MonoBehaviour {
         //プレイヤーtag のオブジェクトが退去したら
         Debug.Log("Kakashi");
         image.sprite = null;
+        TuiokuUI.SetActive(false);
     }
+
     public float GetFearRadius(int level)
     {
         switch (level)
         {
             case 1:
-                return 5.0f;
+                return 25.0f;
                 break;
             case 2:
-                return 10.0f;
+                return 50.0f;
                 break;
             case 3:
-                return 15.0f;
+                return 75.0f;
                 break;
             case 4:
-                return 20.0f;
+                return 100.0f;
                 break;
             case 5:
-                return 25.0f;
+                return 125.0f;
                 break;
         }
         return 10.0f;

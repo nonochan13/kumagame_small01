@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Kakashi
+  - DonguriTag
+  - HatakeTag
+  - KinokoTag
   layers:
   - Default
   - TransparentFX
